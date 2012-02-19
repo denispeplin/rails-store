@@ -17,8 +17,8 @@ describe "products/edit" do
     assert_select "form", :action => products_path(@product), :method => "post" do
       assert_select "input#product_name", :name => "product[name]"
       assert_select "input#product_price", :name => "product[price]"
-      assert_select "input#product_category", :name => "product[category]"
-      assert_select "input#product_brand", :name => "product[brand]"
+      assert_select "input#product_category_id", :name => "product[category_id]"
+      assert_select "input#product_brand_id", :name => "product[brand_id]"
     end
   end
 end
