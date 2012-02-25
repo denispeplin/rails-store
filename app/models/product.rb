@@ -4,4 +4,6 @@ class Product < ActiveRecord::Base
 
   delegate :name, to: :category, prefix: true
   delegate :name, to: :brand, prefix: true
+
+  validates_presence_of :name
 end
