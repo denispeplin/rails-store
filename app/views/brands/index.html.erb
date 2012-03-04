@@ -1,23 +1,26 @@
-<h1>Listing brands</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @brands.each do |brand| %>
-  <tr>
-    <td><%= brand.name %></td>
-    <td><%= link_to 'Show', brand %></td>
-    <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-    <td><%= link_to 'Destroy', brand, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Brands</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.id %></td>
+        <td><%= link_to brand.name, brand_path(brand) %></td>
+        <td><%= brand.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_brand_path(brand), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', brand_path(brand), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to 'New', new_brand_path, :class => 'btn btn-primary' %>
