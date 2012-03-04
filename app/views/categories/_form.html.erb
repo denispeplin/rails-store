@@ -1,5 +1,9 @@
 <%= simple_form_for(@category, html: {class: 'form-horizontal' }) do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Category</legend>
+
   <%= f.input :name %>
   <%= f.association :brands %>
   <%= f.button :submit %>
+  </fieldset>
 <% end %>
