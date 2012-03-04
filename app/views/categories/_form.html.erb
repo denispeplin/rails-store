@@ -1,12 +1,11 @@
 <%= simple_form_for(@category) do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Category</legend>
-
-  <%= f.input :name %>
-  <%= f.association :brands %>
-  <div class="form-actions">
-  <%= f.button :submit %>
-  <%= link_to 'Cancel', brands_path, :class => 'btn' %>
-  </div>
+      <%= f.input :name %>
+      <%= f.association :brands %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+        <%= link_to 'Cancel', brands_path, :class => 'btn' %>
+      </div>
   </fieldset>
 <% end %>
