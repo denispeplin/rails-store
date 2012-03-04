@@ -1,6 +1,7 @@
 <%= simple_form_for(@category) do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Category</legend>
+      <%= f.error_notification %>
       <%= f.input :name %>
       <%= f.association :brands %>
       <div class="form-actions">

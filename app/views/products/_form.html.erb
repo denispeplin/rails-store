@@ -1,6 +1,7 @@
 <%= simple_form_for(@product) do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Product</legend>
+      <%= f.error_notification %>
       <%= f.input :name %>
       <%= f.input :price %>
       <%= f.association :category %>
