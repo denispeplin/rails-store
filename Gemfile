@@ -8,7 +8,6 @@ gem 'rails', '3.2.1'
 gem 'sqlite3'
 
 gem 'simple_form'
-gem 'twitter-bootstrap-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +19,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
