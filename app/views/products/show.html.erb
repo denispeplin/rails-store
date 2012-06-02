@@ -1,24 +1,11 @@
 <h1>Product</h1>
 
-<p>
-  <b>Name</b><br>
-  <%= @product.name %>
-</p>
-
-<p>
-  <b>Price</b><br>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Category</b><br>
-  <%= @product.category_name %>
-</p>
-
-<p>
-  <b>Brand</b><br>
-  <%= @product.brand_name %>
-</p>
+<%= show_for @product do |p| %>
+  <%= p.attribute :name %>
+  <%= p.attribute :price %>
+  <%= p.attribute :category_name %>
+  <%= p.attribute :brand_name %>
+<% end %>
 
 <div class="form-actions">
   <%= link_to 'Back', products_path, :class => 'btn'  %>

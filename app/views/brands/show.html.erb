@@ -1,9 +1,8 @@
 <h1>Brand</h1>
 
-<p>
-  <b>Name</b><br>
-  <%= @brand.name %>
-</p>
+<%= show_for @brand do |b| %>
+  <%= b.attribute :name %>
+<% end %>
 
 <div class="form-actions">
   <%= link_to 'Back', brands_path, :class => 'btn'  %>
