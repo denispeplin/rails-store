@@ -1,4 +1,4 @@
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for(@product, remote: defined? remote) do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Product</legend>
       <%= f.error_notification %>

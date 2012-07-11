@@ -1,0 +1,6 @@
+<% if @product.new_record? %>
+  $('input#product_name').effect('highlight', { color: 'red' });
+<% else %>
+  $('tbody#products').append("<%= escape_javascript(render @product) %>");
+  $('tr#<%= dom_id(@product) %>').hide().show('slow');
+<% end %>

@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @product = Product.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -50,6 +51,7 @@ class ProductsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 

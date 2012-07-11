@@ -11,9 +11,22 @@
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="products">
     <%= render @products %>
   </tbody>
 </table>
 
-<%= link_to 'New', new_product_path, :class => 'btn btn-primary' %>
+<%= simple_form_for(@product, remote: true) do |f| %>
+  <fieldset>
+    <legend>Create Product</legend>
+      <%= f.error_notification %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.association :category %>
+      <%= f.association :brand %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+        <%= link_to 'Cancel', products_path, :class => 'btn' %>
+      </div>
+  </fieldset>
+<% end %>
