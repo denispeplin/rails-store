@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe "brands" do
   it "should have a New link in index page" do
     visit brands_path

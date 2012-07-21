@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe "categories" do
   it "should have a New link in index page" do
     visit categories_path
