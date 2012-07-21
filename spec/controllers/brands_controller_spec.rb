@@ -24,7 +24,7 @@ describe BrandsController do
   # Brand. As you add validations to Brand, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {name: 'MyBrand'}
   end
   
   # This should return the minimal set of values that should be in the session
