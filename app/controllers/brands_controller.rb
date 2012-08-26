@@ -1,4 +1,10 @@
 class BrandsController < ApplicationController
+  before_filter :get_brand, only: [ :show, :edit, :update, :destroy ]
+  
+  def get_brand
+    @brand = Brand.find(params[:id])
+  end
+  
   # GET /brands
   # GET /brands.json
   def index
@@ -13,8 +19,6 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
-    @brand = Brand.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @brand }
@@ -34,7 +38,6 @@ class BrandsController < ApplicationController
 
   # GET /brands/1/edit
   def edit
-    @brand = Brand.find(params[:id])
   end
 
   # POST /brands
@@ -56,8 +59,6 @@ class BrandsController < ApplicationController
   # PUT /brands/1
   # PUT /brands/1.json
   def update
-    @brand = Brand.find(params[:id])
-
     respond_to do |format|
       if @brand.update_attributes(params[:brand])
         format.html { redirect_to @brand, notice: 'Brand was successfully updated.' }
@@ -72,7 +73,6 @@ class BrandsController < ApplicationController
   # DELETE /brands/1
   # DELETE /brands/1.json
   def destroy
-    @brand = Brand.find(params[:id])
     @brand.destroy
 
     respond_to do |format|
