@@ -12,11 +12,11 @@
     <% @brands.each do |brand| %>
       <tr>
         <td><%= brand.id %></td>
-        <td><%= link_to brand.name, brand_path(brand) %></td>
+        <td><%= link_to brand.name, brand %></td>
         <td><%= brand.created_at %></td>
         <td>
           <%= link_to 'Edit', edit_brand_path(brand), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', brand_path(brand), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Destroy', brand, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>

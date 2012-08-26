@@ -7,5 +7,5 @@
 <div class="form-actions">
   <%= link_to 'Back', categories_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_category_path(@category), :class => 'btn' %>
-  <%= link_to 'Delete', category_path(@category), :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger' %>
+  <%= link_to 'Delete', @category, :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger' %>
 </div>
