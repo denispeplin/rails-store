@@ -5,7 +5,7 @@ gem 'rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 gem 'simple_form'
 
@@ -33,6 +33,7 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 # To use ActiveModel has_secure_password
