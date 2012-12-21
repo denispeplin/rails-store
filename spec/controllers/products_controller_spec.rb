@@ -85,6 +85,19 @@ describe ProductsController do
       end
     end
 
+    describe "with photo" do
+      before :each do
+        @filename = 'image.jpg'
+        @file = fixture_file_upload("/#{@filename}", 'image/jpg')
+        @attributes = valid_attributes.merge({:photo => @file})
+      end
+
+      it "creates a new Product" do
+        post :create, {product: @attributes}, valid_session
+        Product.last.photo_file_name.should == @filename
+      end
+    end
+
     describe "with invalid params" do
       it "assigns a newly created but unsaved product as @product" do
         # Trigger the behavior that occurs when invalid params are submitted
