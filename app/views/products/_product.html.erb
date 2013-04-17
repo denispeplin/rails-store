@@ -6,7 +6,17 @@
   <td><%= product.brand_name %></td>
   <td><%= product.created_at %></td>
   <td>
-    <%= link_to 'Edit', edit_product_path(product), :class => 'btn btn-mini' %>
+    <a href="#modal_<%= dom_id(product) %>" role="button" class="btn btn-mini" data-toggle="modal">Edit</a>
     <%= link_to 'Destroy', product, :method => :delete, :class => 'btn btn-mini btn-danger', remote: true %>
   </td>
 </tr>
+
+<div class="modal hide fade" id="modal_<%= dom_id(product) %>">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Editing Product</h3>
+  </div>
+  <div class="modal-body">
+    <%= render 'form', remote: true, product: product %>
+  </div>
+</div>

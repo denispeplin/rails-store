@@ -69,6 +69,7 @@ class ProductsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 

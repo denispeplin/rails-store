@@ -1,0 +1,7 @@
+<% if @product.valid? %>
+  $('#modal_<%= dom_id(@product) %>').modal('hide');
+  $('tr#<%= dom_id(@product) %>').html("<%= escape_javascript(render @product) %>");
+  $('tr#<%= dom_id(@product) %>').hide().show('slow');
+<% else %>
+  $('input#product_name').effect('highlight', { color: 'red' });
+<% end %>
