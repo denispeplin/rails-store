@@ -5,7 +5,7 @@ gem 'rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'mysql2'
 
 gem 'simple_form'
 
@@ -15,6 +15,7 @@ gem 'pjax_rails'
 
 gem 'therubyracer'
 gem 'less-rails'
+gem "paperclip", "~> 3.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 # To use ActiveModel has_secure_password
@@ -51,4 +53,4 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'debugger'

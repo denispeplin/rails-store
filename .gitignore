@@ -21,3 +21,6 @@ doc
 /nbproject
 
 coverage
+.elasticbeanstalk/
+
+public/system
